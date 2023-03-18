@@ -68,7 +68,7 @@ Other specifications may have different costs, but these are the one important t
 look at compatibility and availability. With respect to compatibility, since we are using AWS S3, it would probably be better to stick to AWS resources. Now, regarding availability, both services accept multiple read and write regions from tens of availability zones, therefore I don't find any relevant difference here either. 
 
 2. Create a diagram based on your design for all 4 services. 
-![plot](multicloud.jpeg)
+image.png 
 
 4. Using the [above linked](#resources) references, add the appropriate modules to the given cloud provider Terraform scafolding files:
     1. AWS - `starter/aws/main.tf`
