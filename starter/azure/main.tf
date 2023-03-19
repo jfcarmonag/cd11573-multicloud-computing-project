@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "udacity" {
-  name     = "Regroup_4gKqrgD_cn"
+  name     = "Regroup_1xMGkah0K7jexQJMXR"
 }
 
 resource "azurerm_container_group" "udacity" {
@@ -33,12 +33,12 @@ resource "azurerm_container_group" "udacity" {
 
 resource "azurerm_mssql_server" "udacity" {
   name                         = "udacity-juanc-azure-sql"
-  resource_group_name          = azurerm_resource_group.udacity.name
+  resource_group_name          = data.azurerm_resource_group.udacity.name
   
   
 }
 
 resource "azurerm_function_app" "udacity" {
   name                       = "udacity-juanc-azure-dotnet-apps"
-  resource_group_name        = azurerm_resource_group.udacity.name
+  resource_group_name        = data.azurerm_resource_group.udacity.name
 }
