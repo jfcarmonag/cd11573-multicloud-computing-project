@@ -179,11 +179,11 @@ resource "aws_ecs_task_definition" "udacity_app" {
     "environment": [
       {
         "name": "AZURE_SQL_SERVER",
-        "value": "udacity-tscotto-azure-sql"
+        "value": "udacity-juanc-azure-sql"
       },
       {
         "name": "AZURE_DOTNET_APP",
-        "value": "udacity-tscotto-azure-dotnet-app"
+        "value": "udacity-juanc-azure-dotnet-app"
       }
     ],
     "portMappings": [
@@ -204,3 +204,24 @@ variable "app_count" {
 
 ####### Your Additions Will Start Here ######
 
+resource "aws_dynamodb_table" "table" {
+  name           = "udacity-juanc-aws-dynamodb"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "UserId"
+
+  attribute {
+    name = "UserId"
+    type = "S"
+  }
+
+  
+}
+
+resource "aws_s3_bucket" "b" {
+  bucket = "udacity-juanc-aws-s3-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
