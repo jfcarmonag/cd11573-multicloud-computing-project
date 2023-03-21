@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This folder contains the scaffolding Terraform code to deploy your project. Once you select the appropriate cloud providers, you will need to research specific Terraform modules for your select service and add those modules to the provided Terraform scaffolding. 
+This folder contains the  Terraform code to deploy the project. 
 
 ### Resources
 See the documentation here:
@@ -18,8 +18,6 @@ See the documentation here:
 ```
 
 ### Installation
-
-**NOTE:** This project assumes you have already set up your labs from the course and created your personal git copies of the repositories:
 
 1. Open the AWS portal from the classroom
     1. Open AWS CloudShell
@@ -38,7 +36,7 @@ See the documentation here:
 ## Project Instructions
 
 ### Requirements
-Your goal is to select a cloud provider for each of the 4 required services - SQL server, S3 storage, web app and NoSQL database. Also don't forget to consider cost and flexibility of pricing options.
+
 
 1. Select a cloud provider for SQL server
     1. Must utilize at least 2 vCPU
@@ -54,12 +52,10 @@ Your goal is to select a cloud provider for each of the 4 required services - SQ
 4. Select a cloud provider for the Web app
     1. Existing dotnet application (note this is NOT a static website)
 
-**NOTE:** There are container groups contained here in the scaffolding for both AWS and Azure. They are not part of the design itself. They are there to test your functionality once you have deployed your work.
+
 
 ### Instructions
-1. With the requirements in mind, your team decided to use AWS S3 due to full S3 API compatibility. The team decided on Azure SQL and a dotnet web app due to Microsoft being the creators of both those technologies. You have the highest compatibility and support from Microsoft with both SQL and dotnet. Your team also wants to use AWS DynamoDB. Do some research using search engines, docs, and pricing calculators from both AWS and Azure to justify why your team chose AWS DynamoDB over Azure's counterpart. Limit your response to less than 150 words. Spend no more than 30 mins on this part. Add your explanation to your README.md file in your final repo submission.
-
-### Answer:
+1. 
 
 After exploring AWS and Azure calculators, we can see that costs of DynamoDB and CosmosDB (Azure's counterpart) are basically the same:
 - 0.25 USD per GB of data storage.
@@ -67,7 +63,7 @@ After exploring AWS and Azure calculators, we can see that costs of DynamoDB and
 Other specifications may have different costs, but these are the one important to us, hence we should
 look at compatibility and availability. With respect to compatibility, since we are using AWS S3, it would probably be better to stick to AWS resources. Now, regarding availability, both services accept multiple read and write regions from tens of availability zones, therefore I don't find any relevant difference here either. 
 
-2. Create a diagram based on your design for all 4 services. 
+2. Diagram based on your design for all 4 services. 
 ![plot](Multicloud.jpeg)
 
 4. Using the [above linked](#resources) references, add the appropriate modules to the given cloud provider Terraform scafolding files:
@@ -123,7 +119,10 @@ look at compatibility and availability. With respect to compatibility, since we 
                 This is my app running on AWS accessing an Azure SQL instance: tscotto-udacity-sql
 
                 And also a dotnet app in Azure: udacity-tscotto-azure-dotnet-app
-12. Please take a screenshot of a running web applications in a browser
+12. Please take a screenshot of a running web applications in a browser:
+
+![azure](azure.png)
+![aws](aws.png)
 13. Complete!
 14. Clean up resources
 
@@ -141,7 +140,8 @@ look at compatibility and availability. With respect to compatibility, since we 
 
     And type `yes` and press enter when asked if you want to destroy the resources
 15. Please take a screenshot of the cloud console showing the successful Terraform destroy command
-
+![azure-destroyed](azuredestroyed.png)
+![aws-destroyed](awsdestroyed.png)
 
 ## Standout Suggestions
 
