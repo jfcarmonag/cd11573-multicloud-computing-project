@@ -34,6 +34,7 @@ resource "azurerm_container_group" "udacity" {
 resource "azurerm_mssql_server" "udacity" {
   name                         = "udacity-juanc-azure-sql"
   resource_group_name          = data.azurerm_resource_group.udacity.name
+  version                      = "12.0"
   
   
 }
