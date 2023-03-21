@@ -39,18 +39,18 @@ resource "azurerm_mssql_server" "udacity" {
 }
 
 
-resource "azurerm_storage_account" "example" {
+resource "azurerm_storage_account" "udacity" {
   name                     = "juancudacitystorage"
-  resource_group_name      = data.azurerm_resource_group.example.name
-  location                 = data.azurerm_resource_group.example.location
+  resource_group_name      = data.azurerm_resource_group.udacity.name
+  location                 = data.azurerm_resource_group.udacity.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
-resource "azurerm_app_service_plan" "example" {
+resource "azurerm_app_service_plan" "udacity" {
   name                = "azure-functions-test-service-plan"
-  location            = data.azurerm_resource_group.example.location
-  resource_group_name = data.azurerm_resource_group.example.name
+  location            = data.azurerm_resource_group.udacity.location
+  resource_group_name = data.azurerm_resource_group.udacity.name
 
   sku {
     tier = "Standard"
@@ -58,11 +58,11 @@ resource "azurerm_app_service_plan" "example" {
   }
 }
 
-resource "azurerm_function_app" "example" {
+resource "azurerm_function_app" "udacity" {
   name                       = "udacity-juanc-azure-dotnet-apps"
-  location                   = data.azurerm_resource_group.example.location
-  resource_group_name        = data.azurerm_resource_group.example.name
-  app_service_plan_id        = azurerm_app_service_plan.example.id
-  storage_account_name       = azurerm_storage_account.example.name
-  storage_account_access_key = azurerm_storage_account.example.primary_access_key
+  location                   = data.azurerm_resource_group.udacity.location
+  resource_group_name        = data.azurerm_resource_group.udacity.name
+  app_service_plan_id        = azurerm_app_service_plan.udacity.id
+  storage_account_name       = azurerm_storage_account.udacity.name
+  storage_account_access_key = azurerm_storage_account.udacity.primary_access_key
 }
