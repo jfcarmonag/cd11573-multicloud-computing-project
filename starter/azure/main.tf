@@ -43,7 +43,7 @@ resource "azurerm_mssql_server" "udacity" {
 
 
 resource "azurerm_storage_account" "udacity" {
-  name                     = "juancudacitystorage"
+  name                     = "juancazurestorage"
   resource_group_name      = data.azurerm_resource_group.udacity.name
   location                 = data.azurerm_resource_group.udacity.location
   account_tier             = "Standard"
